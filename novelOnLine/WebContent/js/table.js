@@ -1,0 +1,10 @@
+$(function(){
+	$("tr:even").addClass("one");//奇数行  
+	$("tr:odd").addClass("two");//偶数行  
+	$("tr").mouseover(function(){  
+		$(this).addClass("three");  
+	})  
+	$("tr").mouseout(function(){  
+		$(this).removeClass("three");  
+	})  
+});
