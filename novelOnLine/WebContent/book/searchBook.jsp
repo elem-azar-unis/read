@@ -34,7 +34,7 @@
 	
 		<div style="float:left">
 			<img style="height: 250px;width: 200px;float: left;margin-left:40px" src="${searchBook[0].b_picture }"></img>
-			<div style="float:left;clear:left;margin-left:40px" ><a href="sectionBook.action?id=<s:property value="b_id" />"><img style="width: 160px; margin-top: 10px" src="../images/2.jpg"></img></a>
+			<div style="float:left;clear:left;margin-left:40px" ><a href="sectionBook.action?id=<s:property value="b_id" />"><img style="width: 160px; margin-top: 10px" src="/novelOnLine/images/2.jpg"></img></a>
 			<ul style="list-style: none; margin-left: -10px">
 				<li class="li">
 				<a href="eggBook.action?id=<s:property value="b_id" />" style="line-height: 30px">砸鸡蛋</a></li>

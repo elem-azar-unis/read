@@ -32,7 +32,7 @@
 			
 			<div style="left"><img style="height: 250px;width: 200px;float: left;margin-left:60px" src="${infor.b_picture }"></img>
 				
-			<div style="float:left;clear:left;margin-left:60px" ><a href="sectionBook.action?id=${infor.b_id}"><img style="width: 160px; margin-top: 10px" src="../images/2.jpg"></img></a>
+			<div style="float:left;clear:left;margin-left:60px" ><a href="sectionBook.action?id=${infor.b_id}"><img style="width: 160px; margin-top: 10px" src="/novelOnLine/images//2.jpg"></img></a>
 			<ul style="list-style: none; margin-left: -10px">
 				
 				<li class="li">
