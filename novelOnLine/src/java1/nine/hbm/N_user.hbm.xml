@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="java1.nine.pojo">
+	<class name="N_user" table="n_user" lazy="true">
+		<id name="u_id" >
+			<generator class="increment" />
+		</id>
+		<property name="u_name" not-null="true"></property>
+		<property name="u_psw"  not-null="true"/>
+		<property name="u_author"></property>
+		<property name="u_level"></property>
+		<property name="u_balance"></property>
+		<property name="u_expense"></property>
+		<set name="n_books" cascade="save-update" inverse="true" lazy="false">
+			<key>
+			<column name="u_id"></column>
+			</key>
+			<one-to-many class="N_book" ></one-to-many>
+		</set>
+		<set name="n_discuss" cascade="save-update" inverse="true" lazy="false">
+			<key>
+			<column name="u_id"></column>
+			</key>
+			<one-to-many class="N_discuss"></one-to-many>
+		</set>
+		<set name="n_replys" cascade="save-update" inverse="true" lazy="false">
+			<key>
+			<column name="u_id"></column>
+			</key>
+			<one-to-many class="N_reply"></one-to-many >
+		</set>
+		<set name="n_shop" cascade="save-update" lazy="false">
+			<key>
+			<column name="u_id"></column>
+			</key>
+			<one-to-many class="N_shop"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

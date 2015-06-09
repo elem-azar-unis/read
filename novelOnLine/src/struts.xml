@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 
+
+2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="novelOnLine" extends="struts-default">
+		<action name="homePage" class="java1.nine.action.HomePageAction" method="DianJi">
+			<result>/page/homepage.jsp</result>
+		</action>
+		<action name="getBookListByType" class="java1.nine.action.BookAction" method="getBookListByType">
+			<result>/book/BooksByType.jsp</result>
+		</action>
+		<action name="*Book" class="java1.nine.action.BookAction"
+			method="{1}">
+			<result name="infor">/book/bookInfor.jsp</result>
+			<result name="search">/book/searchBook.jsp</result>
+			<result name="section">/book/bookSection.jsp</result>
+			<result name="sectionContent">/book/sectionInfor.jsp</result>
+			<result name="nextOrPre">/book/sectionInfor.jsp</result>
+			<result name="sea">/book/search.jsp</result>
+			<result name="VIP">/manager/managerHome.jsp</result>
+			<result name="next">/manager/managerHome.jsp</result>
+			<result name="tiny">/book/tinyBook.jsp</result>
+			<result name="tinyNext">/book/tinyBook.jsp</result>
+			<result name="login">/user/login.jsp</result>
+			<result name="charge" type="chain">getIntoUser</result>
+			<result name="save">/home.jsp</result>
+			<result name="egg">success.jsp</result>
+			<result name="flower">success.jsp</result>
+			<result name="input" type="chain">extranceUser</result>
+			<result name="manB">/manager/novelManager.jsp</result>
+			<result name="update">/manager/updateNovel.jsp</result>
+			<result name="delete" type="chain">ManBBook</result>
+		</action>
+		<action name="*User" class="java1.nine.action.UserAction"
+			method="{1}">
+			<result name="login">/user/userhome.jsp</result>
+			<result name="input">/user/login.jsp</result>
+			<result name="extrance">/user/login.jsp</result>
+			<result name="getinto">/user/userhome.jsp</result>
+			<result name="manager" type="chain">usuallyUser</result>
+			<result name="usually">/manager/managerHome.jsp</result>
+			<result name="next">/manager/managerHome.jsp</result>
+			<result name="infor">/manager/updateUser.jsp</result>
+			<result name="update" type="chain">usuallyUser</result>
+			<result name="delete" type="chain">usuallyUser</result>
+			<result name="addCharge" type="chain">getIntoUser</result>
+			<result name="over" type="chain">getIntoUser</result>
+			<result name="logout" type="chain">homePage</result>
+		</action>
+		<action name="*Shop" class="java1.nine.action.ShopAction" method="{1}">
+			<result name="home">/page/homepage.jsp</result>
+			<result name="infor">/shop/shopInfo.jsp</result>
+			<result name="login" type="chain">extranceUser</result>
+			<result name="car" >/shop/success.jsp</result>
+			<result name="searchCar">/shop/searchCar.jsp</result>
+			<result name="pay" >/shop/success.jsp</result>
+			<result name="del" type="chain">searchCarShop</result>
+		</action>
+		<action name="jFreeChart" class="java1.nine.action.JFreeChartAction">
+			<result>/manager/JFreeChart.jsp</result>
+		</action>
+		<action name="reg" class="java1.nine.action.RegAction">
+			<result type="chain">homePage</result>
+			<result name="input">reg.jsp</result>
+		</action>
+		<action name="goOn" class="java1.nine.action.GoOnAction">
+			<result>/user/goOn.jsp</result>
+		</action>
+		<action name="renew" class="java1.nine.action.RenewAction">
+			<result >success.jsp</result>
+			<result name="input" type="chain" >renew.action</result>
+		</action>
+		<action name="upload" class="java1.nine.action.UploadAction">
+		</action>
+		<action name="apply" class="java1.nine.action.ApplyAction">
+			<result type="chain">getIntoUser</result>
+		</action>
+		<action name="nextBook" class="java1.nine.action.NextBookAction">
+			<result >/manager/novelManager.jsp</result>
+		</action>
+		<action name="novelUpdate" class="java1.nine.action.NovelUpdateAction">
+			<result type="chain">ManBBook</result>
+		</action>
+		
+	</package>
+		<!--评论的action-->
+	<package name="comment" extends="struts-default">
+	<action name="publishComment" class="java1.nine.action.comment.PublishCommentAction">
+	<result>/comment/publishComment.jsp</result>
+	<result name="log">/user/login.jsp</result>
+	<result name="replay">/comment/replay.jsp</result>
+	</action>
+	
+	<action name="mainComment" class="java1.nine.action.comment.MainCommentAction">
+	<result>/comment/mainComment.jsp</result>
+	</action>
+
+	<action name="saveComment" class="java1.nine.action.comment.SaveCommentAction">
+	<result type="redirect">/comment/Success.jsp</result>
+	<result type="redirect" name="log">mainComment.action</result>
+	</action>
+	
+	<action name="moreBook" class="java1.nine.action.comment.MoreBookAction">
+	<result>/comment/moreBook.jsp</result>
+	<result name="type">/book/BooksByType.jsp</result>
+	</action>
+	<action name="nextMoreBook" class="java1.nine.action.comment.MoreBookAction" method="nextMoreBook">
+	<result>/comment/moreBook.jsp</result>
+	<result name="type">/book/BooksByType.jsp</result>
+	</action>
+	<action name="pageupMoreBook" class="java1.nine.action.comment.MoreBookAction" method="pageupMoreBook">
+	<result>/comment/moreBook.jsp</result>
+	<result name="type">/book/BooksByType.jsp</result>
+	</action>
+	
+	
+	<action name="login" class="java1.nine.action.comment.LoginAction">
+	<result type="redirect">mainComment.action</result>
+	<result name="fail">/user/login.jsp</result>
+	</action>
+	
+	<action name="out" class="java1.nine.action.comment.LogOut">
+	<result type="redirect">home.jsp</result>
+	</action>
+	
+	<action name="bookComt" class="java1.nine.action.comment.BookCmtsAction">
+	<result>/comment/commentsOfBook.jsp</result>
+	</action>
+	<action name="nextComments" class="java1.nine.action.comment.BookCmtsAction" method="nextComment">
+	<result>/comment/commentsOfBook.jsp</result>
+	</action>
+	<action name="pageupComments" class="java1.nine.action.comment.BookCmtsAction" method="pageupComments">
+	<result>/comment/commentsOfBook.jsp</result>
+	</action>
+	
+	<action name="saveReplay" class="java1.nine.action.comment.SaveReplayAction">
+	<result>/comment/Success.jsp</result>
+	</action>
+	
+	<action name="replay" class="java1.nine.action.comment.ReplayAction">
+	<result>/comment/replay.jsp</result>
+	<result name="log">/user/login.jsp</result>
+	</action>
+	
+	
+	
+	</package>
+</struts>

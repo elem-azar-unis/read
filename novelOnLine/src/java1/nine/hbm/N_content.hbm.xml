@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="java1.nine.pojo">
+	<class name="N_content" table="n_content" lazy="true">
+		<id name="c_id">
+			<generator class="increment" />
+		</id>
+		<property name="c_section"></property>
+		<property name="c_sectionContent"></property>
+		<many-to-one name="n_book" column="b_id" class="N_book" lazy="false"> </many-to-one>
+	</class>
+</hibernate-mapping>

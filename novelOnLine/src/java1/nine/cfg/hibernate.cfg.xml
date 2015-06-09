@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+		<property name="connection.username">scott</property>
+		<property name="connection.password">430167</property>
+		
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		
+	<mapping resource="java1/nine/hbm/N_book.hbm.xml" />
+	<mapping resource="java1/nine/hbm/N_content.hbm.xml" />
+	<mapping resource="java1/nine/hbm/N_discuss.hbm.xml" />	
+		<mapping resource="java1/nine/hbm/N_manager.hbm.xml" />
+		<mapping resource="java1/nine/hbm/N_reply.hbm.xml" />
+		<mapping resource="java1/nine/hbm/N_user.hbm.xml" />
+		<mapping resource="java1/nine/hbm/N_shop.hbm.xml"/>
+	</session-factory>
+
+</hibernate-configuration>

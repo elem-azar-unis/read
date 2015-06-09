@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="java1.nine.pojo">
+	<class name="N_discuss" table="n_discuss" lazy="true">
+		<id name="d_id">
+			<generator class="increment" />
+		</id>
+		<property name="d_content" not-null="true"></property>
+		<many-to-one name="n_book" column="b_id" class="N_book" > </many-to-one>
+		<many-to-one name="n_user" column="u_id" class="N_user" lazy="false" > </many-to-one>
+		<set name="n_replys" cascade="save-update" inverse="true" lazy="false">
+			<key>
+			<column name="d_id"></column>
+			</key>
+			<one-to-many class="N_reply" ></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

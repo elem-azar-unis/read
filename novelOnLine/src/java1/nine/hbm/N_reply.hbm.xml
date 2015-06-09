@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="java1.nine.pojo">
+<class name="N_reply" table="n_reply" lazy="false">
+		<id name="r_id">
+			<generator class="increment" />
+		</id>
+		<property name="r_content" not-null="true"></property>
+		<many-to-one name="n_discuss" column="d_id" class="N_discuss" lazy="false" > </many-to-one>
+		<many-to-one name="n_user" column="u_id" class="N_user" lazy="false"> </many-to-one>
+</class>
+</hibernate-mapping>

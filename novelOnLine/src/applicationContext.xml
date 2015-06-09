@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:/java1/nine/cfg/hibernate.cfg.xml"></property>
+	</bean>
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="bookManager" class="java1.nine.dao.impl.BookManagerImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userManager" class="java1.nine.dao.impl.UserManagerImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="homePage" class="java1.nine.action.HomePageAction">
+		<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	<bean id="book" class="java1.nine.action.BookAction">
+		<property name="bookManager" ref="bookManager"></property>
+		<property name="userManager" ref="userManager"></property>
+	</bean>
+	
+	<bean id="user" class="java1.nine.action.UserAction">
+		<property name="userManager" ref="userManager"></property>
+		<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	<bean id="shop" class="java1.nine.action.ShopAction"> 
+		<property name="bookManager" ref="bookManager"></property>
+		<property name="userManager" ref="userManager"></property>
+	</bean>
+	<bean id="jFreeChart" class="java1.nine.action.JFreeChartAction">
+		<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	<bean id="reg" class="java1.nine.action.RegAction">
+		<property name="userManager" ref="userManager"></property>
+	</bean>
+	<bean id="goOn" class="java1.nine.action.GoOnAction">
+		<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	<bean id="renew" class="java1.nine.action.RenewAction">
+		<property name="userManager" ref="userManager"></property>
+		<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	<bean id="apply" class="java1.nine.action.ApplyAction">
+		<property name="userManager" ref="userManager"></property>
+	</bean>
+	<bean id="nextBook" class="java1.nine.action.NextBookAction">
+		<property name="bookManager" ref="bookManager"></property>
+	
+	</bean>
+	<bean id="novelUpdate" class="java1.nine.action.NovelUpdateAction">
+		<property name="bookManager" ref="bookManager"></property>
+			<property name="userManager" ref="userManager"></property>
+	</bean>
+	<!--评论的bean-->
+	<bean id="commentManager" class="java1.nine.dao.impl.CommentManagerImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	<bean id="mainComment" class="java1.nine.action.comment.MainCommentAction">
+	<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	
+	
+	<bean id="saveComment" class="java1.nine.action.comment.SaveCommentAction" scope="prototype">
+	<property name="commentManager" ref="commentManager"></property>
+	<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	
+	<bean id="moreBook" class="java1.nine.action.comment.MoreBookAction">
+	<property name="bookManager" ref="bookManager"></property>
+	</bean>
+	
+	<bean id="login" class="java1.nine.action.comment.LoginAction">
+	<property name="commentManager" ref="commentManager"></property>
+	</bean>
+	
+	<bean id="bookComt" class="java1.nine.action.comment.BookCmtsAction">
+	<property name="commentManager" ref="commentManager"></property>
+	</bean>
+	
+	<bean id="saveReplay" class="java1.nine.action.comment.SaveReplayAction">
+	<property name="commentManager" ref="commentManager"></property>
+	</bean>
+	
+	<bean id="replay" class="java1.nine.action.comment.ReplayAction">
+	<property name="commentManager" ref="commentManager"></property>
+	</bean>
+	
+</beans>
+
+
+

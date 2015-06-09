@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="java1.nine.pojo">
+<class name="N_book" table="n_book" lazy="true">
+		<id name="b_id">
+			<generator class="increment" />
+		</id>
+		<property name="b_name"  not-null="true"></property>
+		<property name="b_type" not-null="true"></property>
+		<property name="b_picture" ></property>
+		<property name="b_intro" ></property>
+		<property name="b_long" ></property>
+		<property name="b_over" ></property>
+		<property name="b_startTime" ></property>
+		<property name="b_lastTime" ></property>
+		<property name="b_flowerNum" ></property>
+		<property name="b_eggNum" ></property>
+		<property name="b_scanNum" ></property>
+		<property name="b_recommend" ></property>
+		<property name="b_freeScan" ></property>
+		<property name="b_scanPrice" ></property>
+		<property name="b_canDownload" ></property>
+		<property name="b_downloadprice" ></property>
+		<property name="b_isSale" ></property>
+		<property name="b_salePrice" ></property>
+		<many-to-one name="n_user" column="u_id" class="N_user" not-null="true" lazy="false"> </many-to-one>
+		<set name="n_contents"  inverse="true" lazy="false">
+			<key>
+			<column name="b_id"></column>
+			</key>
+			<one-to-many class="N_content"></one-to-many>
+		</set>
+		<set name="n_discuss" cascade="save-update" inverse="true" lazy="false">
+			<key>
+			<column name="b_id"></column>
+			</key>
+			<one-to-many class="N_discuss"></one-to-many>
+		</set>
+		<set name="n_shop" cascade="save-update" lazy="false">
+			<key>
+			<column name="b_id"></column>
+			</key>
+			<one-to-many class="N_shop"></one-to-many>
+		</set>
+</class>
+
+</hibernate-mapping>

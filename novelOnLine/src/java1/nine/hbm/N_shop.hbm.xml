@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="java1.nine.pojo">
+	<class name="N_shop" table="N_SHOP" lazy="false">
+		<id name="s_orderid">
+			<generator class="increment" />
+		</id>
+		<property name="s_num"></property>
+		<property name="s_state"></property>
+		<many-to-one name="n_book" column="b_id" class="N_book" lazy="false" > </many-to-one>
+		<many-to-one name="n_user" column="u_id" class="N_user"  lazy="false"> </many-to-one>
+	</class>
+</hibernate-mapping>
