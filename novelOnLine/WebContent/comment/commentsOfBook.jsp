@@ -68,7 +68,7 @@ $(document).ready(function(){
 <td style="height:40px;width: 80px;text-align: center;"><s:property value="n_book.b_name"/></td>
 <td style="height:40px;width: 280px;text-align: center;"><s:property value="d_content"/></td>
 <td style="height:40px;width: 80px;text-align: center;"><s:property value="n_user.u_name"/></td>
-<td><a href="replay.action?did=<s:property value="d_id"/>"><font color=blue>跟帖</font></a></td>
+<td style="text-align: center;"><a href="replay.action?did=<s:property value="d_id"/>"><font color=blue>跟帖</font></a></td>
 </tr>
 </s:iterator>
 </table>
