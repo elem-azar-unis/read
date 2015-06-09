@@ -1,0 +1,59 @@
+a {
+	text-decoration: none;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: black;
+	
+}
+
+body {
+	text-align: center;
+	width: 80%;
+	margin-left: 150px;
+	font-size: 12px;
+	height: auto;
+	background-color:#E0ECFF;
+	background-image: url('<%=path%>/images/bg.jpg');
+	background-attachment:fixed;
+}
+
+.a2 {
+	margin-right: 20px
+}
+
+.menuDiv {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+	width: 10%;
+	text-align: center;
+	background-image: url("/novelOnLine/shop/image/03.bmp");
+	height:40px;
+	background-repeat: no-repeat;
+}
+
+.block {
+	height:40px;
+	width:97%;
+	
+}
+
+
+.bang {
+	float: left;
+	clear: left;
+	margin-top: 20px; 
+	border-style : none;
+	border-color:#D2D2D2;
+	width: 20%;
+	border-width: 2px;
+	overflow: hidden;
+	
+}
+span{
+	color:gray;
+margin-left: -10px;                
+}
+li{
+margin-bottom: 10px;
+}

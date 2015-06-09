@@ -1,0 +1,132 @@
+li {
+	margin-bottom: 10px
+}
+
+body {
+	text-align: center;
+	width: 80%;
+	margin-left: 100px;
+	font-size: 12px;
+	height: auto;
+	background-color:#E0ECFF;
+	background-image: url('<%=path%>/images/bg.jpg');
+	background-attachment:fixed;
+}
+
+.a1 {
+	text-decoration: none;
+	margin-left: 5px;
+	margin-right: 5px
+}
+
+.a2 {
+	margin-right: 20px
+}
+
+a {
+	text-decoration: none;
+}
+
+.menuDiv {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+	color: #00697B;
+	margin-top: -10px;
+	width: 14.26%;
+	line-height:20px;
+	background-image: url("/novelOnLine/images/menu.jpg");
+	height: 50px;
+	text-align: center;
+}
+
+span {
+	color: gray
+}
+
+a {
+	color: BLACK
+}
+
+.bang {
+	float: left;
+	width: 20%;
+	border-style: none;
+	overflow: hidden;
+}
+
+.block {
+	height: 40px;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.type1 {
+	float: left;
+	width: 33%;
+	border-style: none;
+}
+
+.type2 {
+	width: 80px;
+	height: 100px;
+	float: left
+}
+
+.type3 {
+	font-weight: bold;
+	margin-top: 10px;
+	font-size: 15px;
+	color: RED;
+	margin-bottom: 10px
+}
+
+.type4 {
+	float: left;
+	clear: left;
+	margin-top: 10px;
+	margin-left: 20px
+}
+
+.type5 {
+	width: 90%;
+	margin-left: 20px
+}
+
+.foot {
+	font-size: 15px;
+	color: BLUE;
+	text-align: center;
+	clear: both;
+	margin-top: 30px;
+}
+
+a:hover {
+	color: RED;
+	text-decoration: underline;
+}
+
+.xian {
+	margin-top: -7px;
+	margin-bottom: 0px;
+	color: #D2D2D2;
+	width: 100%;
+}
+
+.td1 {
+	font-weight: bold;
+	color: BLACK
+}
+
+td {
+	text-align:left;
+	width: 250px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #D2D2D2;
+}
+.li{ background-image:url("/novelOnLine/images/1.jpg"); background-repeat: no-repeat;}
+.aa{font-weight: bold;margin-top:10px;font-size: 15px;color: RED;margin-bottom: 10px}
+.bb{height: 100px;width:200px;padding-left:10px;margin-right:10px;letter-spacing: 2px}
+.cc{background-color: #A0FFFF;height: 40px}
