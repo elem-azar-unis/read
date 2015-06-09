@@ -36,9 +36,7 @@
 	<s:textfield label="关键字" name="bookName"  cssStyle="width:120px;height:14px;"></s:textfield>
 	<s:select  list="{'书名','作者名'}" name="bookTag"></s:select>
 	<input type="submit" value="快速搜书" style="width:80px;"></input>
-	<a href="">书库</a>·
-	<a href="">全本</a>·
-	<a class="a2" href="">推荐</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="moreBook.action?type=同人&flag=1">同人</a>·
 	<a class="a2" href="moreBook.action?type=漫画&flag=1">漫画</a>
 	<a href="moreBook.action?type=玄幻&flag=1">玄幻</a>·
